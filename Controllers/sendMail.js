@@ -106,6 +106,11 @@ const sendEmail = async function name({
                             strSubject:content?.strSubject,
                             strEmailContent:content?.strEmailContent
                      });
+                    if (broadcast) {
+                         broadcast({ status: 'sent', count: 1, total: intBulkEmailCount });
+                     }
+
+                     console.log(`Email ${1} sent successfully.`);
               }
 }
      
