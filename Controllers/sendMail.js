@@ -78,6 +78,7 @@ const sendEmail = async function name({
             strEmailContent: content?.strEmailContent,
             count: i,
           });
+          await new Promise(res => setTimeout(res, 500)); // Delay each send by 200ms
 
           if (broadcast) {
             broadcast({ status: 'sent', count: i, total: intBulkEmailCount });
